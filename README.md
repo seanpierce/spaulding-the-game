@@ -14,7 +14,6 @@ Everyone knows and loves Spaulding, but now he needs your help! Can you help him
 ```shell
 $ git clone https://github.com/seanpierce/spaulding-thegame
 $ cd spaulding-thegame
-$ yarn
 ```
 * Serve using prefered web server
 * visit path/to/project/
