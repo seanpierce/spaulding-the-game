@@ -23,7 +23,7 @@ var config = {
 
 var player,
 tings,
-time = 15,
+time = 61,
 pills,
 platforms,
 cursors,
