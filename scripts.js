@@ -210,7 +210,7 @@ docReady(() => {
         loseMessage.style.display = 'inherit'
     }
 
-    function reset() {
+    function playAgain() {
         theme.pause()
         theme.currentTime = 0
         winMessage.style.display = 'none'
@@ -221,13 +221,9 @@ docReady(() => {
         timer = setInterval(countDown, 1000)
         theme.play()
         countDown()
-
-    }
-
-    function playAgain() {
-        reset()
         context.scene.restart()
     }
+    
     var classname = document.getElementsByClassName("play-again")
 
     for (var i = 0; i < classname.length; i++) {
