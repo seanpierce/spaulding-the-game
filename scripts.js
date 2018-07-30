@@ -40,6 +40,8 @@ docReady(() => {
     context
 
     var game = new Phaser.Game(config)
+    var theme = new Audio()
+    theme.src = 'assets/main-theme.mp3' || 'assete/main-theme.ogg'
     var timer = setInterval(countDown, 1000)
 
     function preload() {
@@ -49,12 +51,16 @@ docReady(() => {
         this.load.image('pill', 'assets/pill.png')
         this.load.image('spaulding', 'assets/spaulding.png')
         this.load.image('logo', 'assets/logo.png')
+        this.load.audio('tingSound','assets/ting.mp3')
     }
     
     function create() {
         context = this
-        this.add.image(400, 300, 'sky');
+        this.add.image(400, 300, 'sky')
         this.add.image(680, 50, 'logo')
+        this.sound.add('tingSound')
+
+        theme.play()
 
         platforms = this.physics.add.staticGroup()
         platforms.create(400, 568, 'ground').setScale(2).refreshBody()
@@ -152,7 +158,9 @@ docReady(() => {
     }
 
     function collectTing(player, ting) {
-        ting.disableBody(true, true);
+        ting.disableBody(true, true)
+
+        this.sound.play('tingSound')
 
         score += 1
         var color = score >= 50 ? '#FFD700' : '#000'
@@ -203,13 +211,17 @@ docReady(() => {
     }
 
     function reset() {
+        theme.pause()
+        theme.currentTime = 0
         winMessage.style.display = 'none'
         loseMessage.style.display = 'none'
         runSpeed = 200
         score = 0
         time = 61
         timer = setInterval(countDown, 1000)
+        theme.play()
         countDown()
+
     }
 
     function playAgain() {
