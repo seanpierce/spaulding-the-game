@@ -108,13 +108,16 @@ docReady(() => {
         })
 
         pills = this.physics.add.group()
+        
         scoreText = this.add.text(16, 16, 'Tings: 0', { 
             fontSize: '16px', 
-            fill: '#000' 
+            fill: '#000',
+            backgroundColor: 'white'
         })
         timeText = this.add.text(16, 32, ('Time: ' + time), { 
             fontSize: '16px',
-            fill: '#000'
+            fill: '#000',
+            backgroundColor: 'white'
         })
 
 
