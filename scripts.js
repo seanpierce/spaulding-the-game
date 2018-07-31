@@ -46,7 +46,7 @@ docReady(() => {
     var timer = setInterval(countDown, 1000)
 
     function preload() {
-        this.load.image('sky', 'assets/waterfall.gif')
+        //this.load.image('sky', 'assets/waterfall.gif')
         this.load.image('ground', 'assets/platform.png')
         this.load.image('tings', 'assets/hein.png')
         this.load.image('pill', 'assets/pill.png')
@@ -57,7 +57,7 @@ docReady(() => {
     
     function create() {
         context = this
-        this.add.image(400, 300, 'sky')
+        //this.add.image(400, 300, 'sky')
         this.add.image(680, 50, 'logo')
         this.sound.add('tingSound')
 
