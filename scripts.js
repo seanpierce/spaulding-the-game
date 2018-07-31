@@ -45,7 +45,7 @@ docReady(() => {
     var timer = setInterval(countDown, 1000)
 
     function preload() {
-        this.load.image('sky', 'assets/waterfall.png')
+        this.load.image('sky', 'assets/waterfall.gif')
         this.load.image('ground', 'assets/platform.png')
         this.load.image('tings', 'assets/hein.png')
         this.load.image('pill', 'assets/pill.png')
