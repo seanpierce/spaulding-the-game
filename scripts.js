@@ -41,11 +41,11 @@ docReady(() => {
 
     var game = new Phaser.Game(config)
     var theme = new Audio()
-    theme.src = 'assets/main-theme.mp3' || 'assete/main-theme.ogg'
+    theme.src = 'assets/main-theme.mp3' || 'assets/main-theme.ogg'
     var timer = setInterval(countDown, 1000)
 
     function preload() {
-        this.load.image('sky', 'assets/sky.png')
+        this.load.image('sky', 'assets/waterfall.png')
         this.load.image('ground', 'assets/platform.png')
         this.load.image('tings', 'assets/hein.png')
         this.load.image('pill', 'assets/pill.png')
