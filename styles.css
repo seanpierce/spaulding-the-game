@@ -38,6 +38,21 @@ img#logo {
     width: 100%;
 }
 
+#waterfall, canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#waterfall {
+    z-index: 1;
+}
+
+canvase {
+    z-index: 2;
+}
+
+
 button {
     background: rgba(0, 0, 0, 0);
     border: solid 1px white;
