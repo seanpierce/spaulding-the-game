@@ -45,6 +45,8 @@ img#logo {
 }
 
 #waterfall {
+    width: 800px;
+    height: 600px;
     z-index: 1;
 }
 
