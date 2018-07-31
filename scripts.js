@@ -12,6 +12,7 @@ docReady(() => {
         type: Phaser.AUTO,
         width: 800,
         height: 600,
+        transparent: true,
         physics: {
             default: 'arcade',
             arcade: {
