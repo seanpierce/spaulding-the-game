@@ -43,7 +43,9 @@ docReady(() => {
     var game = new Phaser.Game(config)
     var theme = new Audio()
     theme.src = 'assets/main-theme.mp3' || 'assets/main-theme.ogg'
+    theme.loop = true
     var timer = setInterval(countDown, 1000)
+    var slowDown
 
     function preload() {
         //this.load.image('sky', 'assets/waterfall.gif')
@@ -173,6 +175,7 @@ docReady(() => {
 
         if (tings.countActive(true) === 0) {
             runSpeed += 100
+            theme.playbackRate += 0.25
             //  A new batch of tings to collect
             tings.children.iterate(function (child) {
                 child.enableBody(true, child.x, 0, true, true);
@@ -207,16 +210,25 @@ docReady(() => {
     }
 
     function winGame() {
+        theme.playbackRate = 1
         winMessage.style.display = 'inherit'
     }
 
     function loseGame() {
+        slowDown = setInterval(function() {
+            if (theme.playbackRate > 0.1)
+                theme.playbackRate -= 0.1
+            else 
+                clearInterval(slowDown)
+        }, 250)
         loseMessage.style.display = 'inherit'
     }
 
     function playAgain() {
+        clearInterval(slowDown)
         theme.pause()
         theme.currentTime = 0
+        theme.playbackRate = 1
         winMessage.style.display = 'none'
         loseMessage.style.display = 'none'
         runSpeed = 200

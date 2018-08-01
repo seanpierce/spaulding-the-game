@@ -38,7 +38,7 @@ img#logo {
     width: 100%;
 }
 
-#waterfall, canvas {
+#waterfall, canvas, #brighten {
     position: absolute;
     top: 0;
     left: 0;
@@ -51,9 +51,15 @@ img#logo {
 }
 
 canvas {
-    z-index: 2;
+    z-index: 3;
 }
 
+#brighten {
+    width: 800px;
+    height: 600px;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.7);
+}
 
 button {
     background: rgba(0, 0, 0, 0);
