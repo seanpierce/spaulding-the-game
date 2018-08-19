@@ -2,8 +2,11 @@ var docReady = callback => {
     document.readyState === "interactive" || 
     document.readyState === "complete" ? callback() : document.addEventListener("DOMContentLoaded", callback)
 }
-docReady(() => {
-    console.log('Page loaded')
+function startGame() {
+    document.getElementById('hide-intro').style.display = "none"
+    document.getElementById('game-container').style.display = 'inherit'
+
+    document.body.removeEventListener("click", startGame)
 
     var winMessage = document.getElementById('win')
     var loseMessage = document.getElementById('lose')
@@ -245,4 +248,7 @@ docReady(() => {
     for (var i = 0; i < classname.length; i++) {
         classname[i].addEventListener('click', playAgain, false)
     }
+}
+docReady(() => {
+    document.body.addEventListener("click", startGame)
 })

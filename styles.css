@@ -3,9 +3,54 @@
     color: white;
 }
 
+#game-container {
+    display: none;
+}
+
+#logo-container {
+    z-index: 20;
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#logo-container img {
+    display: block;
+    margin: auto;
+}
+
+#logo-container h1 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 3em;
+    text-shadow: 4px 4px 4px black;
+    font-style: italic;
+}
+
+
+#click-anywhere {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-style: italic;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 4px;
+}
+
 body {
     padding: 0;
     margin: 0;
+    background-image: url('assets/lose.png');
+    background-size: cover;
+}
+
+#darken {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0; left: 0;
+    background: rgba(0, 0, 0, 0.9);
 }
 
 img#logo {

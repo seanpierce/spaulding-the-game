@@ -1,0 +1,407 @@
+* {
+    box-sizing: border-box;
+}
+    html,
+    .intro {
+    height: 100%;
+}
+.intro {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    z-index: 1;
+}
+.scene {
+    /* background: linear-gradient(0deg, royalblue 0%, #515ada 100%); */
+    background-image: url('assets/island-background.png');
+    background-size: cover;
+    width: 400px;
+    height: 250px;
+    perspective: 1200px;
+    animation: throb 30s infinite ease-in-out;
+    margin: 15em auto;
+}
+.object {
+    position: absolute;
+    transform-style: preserve-3d;
+    animation: rotate 10s infinite ease-in-out;
+}
+.shadow1 {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    box-shadow: 10px 10px 18px rgba(0, 0, 0, 0.6);
+    transform: translate3d(calc(-50%), calc(-50%), 200px) rotateX(90deg);
+}
+.shadow2 {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    box-shadow: 10px 10px 18px rgba(0, 0, 0, 0.6);
+    transform: translate3d(calc(-50% - 125px), calc(-50%), 200px) rotateX(90deg);
+}
+.shadow3 {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    box-shadow: 10px 10px 18px rgba(0, 0, 0, 0.6);
+    transform: translate3d(calc(-50%), calc(-50%), -300px) rotateX(90deg);
+}
+.shadow4 {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    box-shadow: 10px 10px 18px rgba(0, 0, 0, 0.6);
+    transform: translate3d(calc(-50% + 4 * 50px), calc(-50%), -75px)
+        rotateX(90deg);
+}
+.shadow5 {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    box-shadow: 10px 10px 18px rgba(0, 0, 0, 0.6);
+    transform: translate3d(calc(-50% + 4 * 50px), calc(-50%), 50px) rotateX(90deg);
+}
+.right {
+    background-color: #ededed;
+}
+.left {
+    background-color: #747582;
+}
+.front {
+    background-color: #d2d3d8;
+}
+.back {
+    background-color: #43576b;
+}
+.top {
+    background-color: #f7f7f7;
+}
+.bottom {
+    background-color: #4b5565;
+}
+.plane1 {
+    position: absolute;
+    width: 50px;
+    height: 250px;
+    transform: translate3d(calc(-50%), calc(-50% - 125px), 225px);
+}
+.plane2 {
+    position: absolute;
+    width: 50px;
+    height: 250px;
+    transform: translate3d(calc(-50% - 125px), calc(-50% - 125px), 225px);
+}
+    .plane3 {
+    position: absolute;
+    width: 50px;
+    height: 250px;
+    transform: translate3d(calc(-50% - 100px), calc(-50% - 125px), 200px)
+        rotateY(90deg);
+}
+.plane4 {
+    position: absolute;
+    width: 50px;
+    height: 250px;
+    transform: translate3d(calc(-50% + 25px), calc(-50% - 125px), 200px)
+        rotateY(90deg);
+}
+.plane5 {
+    position: absolute;
+    width: 50px;
+    height: 250px;
+    transform: translate3d(calc(-50% - 25px), calc(-50% - 125px), 200px)
+        rotateY(90deg);
+}
+.plane6 {
+    position: absolute;
+    width: 50px;
+    height: 250px;
+    transform: translate3d(calc(-50% - 150px), calc(-50% - 125px), 200px)
+        rotateY(90deg);
+}
+.plane7 {
+    position: absolute;
+    width: 50px;
+    height: 250px;
+    transform: translate3d(calc(-50%), calc(-50% - 125px), 175px);
+}
+.plane8 {
+    position: absolute;
+    width: 50px;
+    height: 250px;
+    transform: translate3d(calc(-50% - 125px), calc(-50% - 125px), 175px);
+}
+.plane9 {
+    position: absolute;
+    width: 175px;
+    height: 50px;
+    transform: translate3d(calc(-50% - 62.5px), calc(-50% - 225px), 225px);
+}
+.plane10 {
+    position: absolute;
+    width: 175px;
+    height: 50px;
+    transform: translate3d(calc(-50% - 62.5px), calc(-50% - 225px), 175px);
+}
+.plane11 {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    transform: translate3d(calc(-50% + 25px), calc(-50% - 225px), 200px)
+        rotateY(90deg);
+}
+.plane12 {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    transform: translate3d(calc(-50% - 150px), calc(-50% - 225px), 200px)
+        rotateY(90deg);
+}
+.plane13 {
+    position: absolute;
+    width: 175px;
+    height: 50px;
+    transform: translate3d(calc(-50% - 62.5px), calc(-50% - 250px), 200px)
+        rotateX(90deg);
+}
+.plane14 {
+    position: absolute;
+    width: 75px;
+    height: 50px;
+    transform: translate3d(calc(-50% - 62.5px), calc(-50% - 200px), 200px)
+        rotateX(90deg);
+}
+.plane15 {
+    position: absolute;
+    width: 50px;
+    height: 500px;
+    transform: translate3d(calc(-50%), calc(-50% - 250px), -75px) rotateX(90deg);
+}
+.plane16 {
+    position: absolute;
+    width: 50px;
+    height: 500px;
+    transform: translate3d(calc(-50%), calc(-50% - 200px), -75px) rotateX(90deg);
+}
+.plane17 {
+    position: absolute;
+    width: 500px;
+    height: 50px;
+    transform: translate3d(calc(-50% - 25px), calc(-50% - 225px), -75px)
+        rotateY(90deg);
+}
+.plane18 {
+    position: absolute;
+    width: 500px;
+    height: 50px;
+    transform: translate3d(calc(-50% + 25px), calc(-50% - 225px), -75px)
+        rotateY(90deg);
+}
+.plane19 {
+    position: absolute;
+    width: 50px;
+    height: 250px;
+    transform: translate3d(calc(-50%), calc(-50% - 125px), -275px);
+}
+.plane20 {
+    position: absolute;
+    width: 50px;
+    height: 250px;
+    transform: translate3d(calc(-50%), calc(-50% - 125px), -325px);
+}
+.plane21 {
+    position: absolute;
+    width: 50px;
+    height: 250px;
+    transform: translate3d(calc(-50% - 25px), calc(-50% - 125px), -300px)
+        rotateY(90deg);
+}
+.plane22 {
+    position: absolute;
+    width: 50px;
+    height: 250px;
+    transform: translate3d(calc(-50% + 25px), calc(-50% - 125px), -300px)
+        rotateY(90deg);
+}
+.plane23 {
+    position: absolute;
+    width: 50px;
+    height: 375px;
+    transform: translate3d(calc(-50% + 200px), calc(-50% - 187.5px), -50px);
+}
+.plane24 {
+    position: absolute;
+    width: 50px;
+    height: 375px;
+    transform: translate3d(calc(-50% + 200px), calc(-50% - 187.5px), -100px);
+}
+.plane25 {
+    position: absolute;
+    width: 50px;
+    height: 375px;
+    transform: translate3d(calc(-50% + 175px), calc(-50% - 187.5px), -75px)
+        rotateY(90deg);
+}
+.plane26 {
+    position: absolute;
+    width: 50px;
+    height: 375px;
+    transform: translate3d(calc(-50% + 225px), calc(-50% - 187.5px), -75px)
+        rotateY(90deg);
+}
+.plane27 {
+    position: absolute;
+    width: 50px;
+    height: 375px;
+    transform: translate3d(calc(-50% + 200px), calc(-50% - 187.5px), 75px);
+}
+.plane28 {
+    position: absolute;
+    width: 50px;
+    height: 375px;
+    transform: translate3d(calc(-50% + 200px), calc(-50% - 187.5px), 25px);
+}
+.plane29 {
+    position: absolute;
+    width: 50px;
+    height: 375px;
+    transform: translate3d(calc(-50% + 175px), calc(-50% - 187.5px), 50px)
+        rotateY(90deg);
+}
+.plane30 {
+    position: absolute;
+    width: 50px;
+    height: 375px;
+    transform: translate3d(calc(-50% + 225px), calc(-50% - 187.5px), 50px)
+        rotateY(90deg);
+}
+.plane31 {
+    position: absolute;
+    width: 250px;
+    height: 50px;
+    transform: translate3d(calc(-50% + 100px), calc(-50% - 350px), -50px);
+}
+.plane32 {
+    position: absolute;
+    width: 250px;
+    height: 50px;
+    transform: translate3d(calc(-50% + 100px), calc(-50% - 350px), -100px);
+}
+.plane33 {
+    position: absolute;
+    width: 250px;
+    height: 50px;
+    transform: translate3d(calc(-50% + 100px), calc(-50% - 375px), -75px)
+        rotateX(90deg);
+}
+.plane34 {
+    position: absolute;
+    width: 250px;
+    height: 50px;
+    transform: translate3d(calc(-50% + 100px), calc(-50% - 325px), -75px)
+        rotateX(90deg);
+}
+.plane35 {
+    position: absolute;
+    width: 250px;
+    height: 50px;
+    transform: translate3d(calc(-50% + 100px), calc(-50% - 350px), 75px);
+}
+.plane36 {
+    position: absolute;
+    width: 250px;
+    height: 50px;
+    transform: translate3d(calc(-50% + 100px), calc(-50% - 350px), 25px);
+}
+.plane37 {
+    position: absolute;
+    width: 250px;
+    height: 50px;
+    transform: translate3d(calc(-50% + 100px), calc(-50% - 375px), 50px)
+        rotateX(90deg);
+}
+.plane38 {
+    position: absolute;
+    width: 250px;
+    height: 50px;
+    transform: translate3d(calc(-50% + 100px), calc(-50% - 325px), 50px)
+        rotateX(90deg);
+}
+.plane39 {
+    position: absolute;
+    width: 50px;
+    height: 175px;
+    transform: translate3d(calc(-50%), calc(-50% - 287.5px), -50px);
+}
+.plane40 {
+    position: absolute;
+    width: 50px;
+    height: 175px;
+    transform: translate3d(calc(-50%), calc(-50% - 287.5px), -100px);
+}
+.plane41 {
+    position: absolute;
+    width: 50px;
+    height: 175px;
+    transform: translate3d(calc(-50% - 25px), calc(-50% - 287.5px), -75px)
+        rotateY(90deg);
+}
+.plane42 {
+    position: absolute;
+    width: 50px;
+    height: 175px;
+    transform: translate3d(calc(-50% + 25px), calc(-50% - 287.5px), -75px)
+        rotateY(90deg);
+}
+.plane43 {
+    position: absolute;
+    width: 50px;
+    height: 175px;
+    transform: translate3d(calc(-50%), calc(-50% - 287.5px), 75px);
+}
+.plane44 {
+    position: absolute;
+    width: 50px;
+    height: 175px;
+    transform: translate3d(calc(-50%), calc(-50% - 287.5px), 25px);
+}
+.plane45 {
+    position: absolute;
+    width: 50px;
+    height: 175px;
+    transform: translate3d(calc(-50% - 25px), calc(-50% - 287.5px), 50px)
+        rotateY(90deg);
+}
+.plane46 {
+    position: absolute;
+    width: 50px;
+    height: 175px;
+    transform: translate3d(calc(-50% + 25px), calc(-50% - 287.5px), 50px)
+        rotateY(90deg);
+}
+@keyframes rotate {
+    0% {
+        transform: translate3d(200px, 320px, -200px) rotateX(6deg) rotateY(-45deg);
+    }
+    50% {
+        transform: translate3d(200px, 400px, -200px) rotateX(-10deg) rotateY(45deg);
+    }
+    100% {
+        transform: translate3d(200px, 320px, -200px) rotateX(6deg) rotateY(315deg);
+    }
+}
+
+@keyframes throb {
+    0% {
+        transform: scale(1);
+    }
+    60% {
+        transform: scale(2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
