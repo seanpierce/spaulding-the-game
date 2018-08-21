@@ -66,7 +66,7 @@ img#logo {
     display: none;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.9);
     z-index: 10;
     position: fixed;
 }
@@ -81,6 +81,12 @@ img#logo {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    color: white;
+}
+
+.content button {
+    border: solid 1px white;
+    color: white;
 }
 
 .content img {
@@ -101,6 +107,8 @@ img#logo {
 
 canvas {
     z-index: 3;
+    display: block;
+    margin: auto;
 }
 
 #brighten {

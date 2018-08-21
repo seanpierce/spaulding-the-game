@@ -2,9 +2,17 @@ var docReady = callback => {
     document.readyState === "interactive" || 
     document.readyState === "complete" ? callback() : document.addEventListener("DOMContentLoaded", callback)
 }
+
+// set audio in global scope
+var splash = new Audio()
+splash.src = 'assets/splash.mp3'
+splash.loop = true
+splash.playbackRate = 1.25
+
 function startGame() {
-    // document.getElementById('hide-intro').style.display = "none"
-    // document.getElementById('game-container').style.display = 'inherit'
+    document.getElementById('intro').style.display = "none"
+    document.getElementById('game-container').style.display = "inherit"
+    splash.pause()
 
     document.body.removeEventListener("click", startGame)
 
@@ -27,6 +35,12 @@ function startGame() {
             preload: preload,
             create: create,
             update: update
+        },
+        stage: {
+            scale: { 
+                pageAlignHorizontally: true,
+                pageAlignVeritcally: true
+            }
         }
     }
 
@@ -44,6 +58,7 @@ function startGame() {
     context
 
     var game = new Phaser.Game(config)
+
     var theme = new Audio()
     theme.src = 'assets/main-theme.mp3' || 'assets/main-theme.ogg'
     theme.loop = true
@@ -250,6 +265,10 @@ function startGame() {
     }
 }
 
+function goAway() {
+    window.location.href = 'https://www.google.com/search?q=poop&oq=poop'
+}
+
 const showCard1 = () => {
     return new Promise((resolve) => {
         var div = document.createElement("div")
@@ -306,12 +325,7 @@ const flash = () => {
 }
 
 function startSplashMusic() {
-    var music = new Audio()
-    music.src = 'assets/splash.mp3'
-    music.loop = true
-    music.id = "splash"
-    music.playbackRate = 1.25
-    music.play()
+    splash.play()
 }
 
 function showSplash() {
@@ -319,6 +333,46 @@ function showSplash() {
     document.getElementById('darken').style.display = 'inherit'
     document.body.classList.add('background')
     startSplashMusic()
+}
+
+function type(input) {
+    var arr = input.split('');
+    var currentLetter = 0;
+    var typeInterval = setInterval(function() {
+        var span = document.createElement('span')
+        span.innerText = arr[currentLetter]
+        document.getElementById("spaulding-intro-text").appendChild(span)
+        currentLetter += 1;
+
+        // stop interval when message ends
+        if (currentLetter >= arr.length) { 
+            clearInterval(typeInterval)
+
+            var options = document.createElement('div')
+            options.innerHTML = `
+                <button onclick="goAway()">NO</button>
+                <button onclick="startGame()">YES</button>
+            `
+            document.getElementById("spaulding-intro-text").appendChild(options)
+        }
+    }, 75);
+}
+
+function spauldingIntro() {
+    document.getElementById('intro').innerHTML = ''
+    var html = `
+        <div id="spaulding-intro">
+            <img src="assets/win.png">
+            <p id="spaulding-intro-text"></p>
+        </div>
+    `
+
+    document.getElementById('intro').innerHTML = html
+
+    var text =
+        'Whats up world? It\'s me, world-famous DJ and international playboy, Spaulding! I\'m headed out to Spoiler Island 3 with the rest of the players, but I can\'t show up empty handed! Can you help me collect 50 tingers?'
+
+    type(text)
 }
 
 docReady(() => {
