@@ -11,7 +11,7 @@ splash.playbackRate = 1.25
 
 function startGame() {
     document.getElementById('intro').style.display = "none"
-    document.getElementById('game-container').style.display = "inherit"
+    document.getElementById('game-container').style.display = "block"
     splash.pause()
 
     document.body.removeEventListener("click", startGame)
@@ -36,12 +36,7 @@ function startGame() {
             create: create,
             update: update
         },
-        stage: {
-            scale: { 
-                pageAlignHorizontally: true,
-                pageAlignVeritcally: true
-            }
-        }
+        parent: 'game-container'
     }
 
     var player,
@@ -77,6 +72,7 @@ function startGame() {
     
     function create() {
         context = this
+
         //this.add.image(400, 300, 'sky')
         this.add.image(680, 50, 'logo')
         this.sound.add('tingSound')
@@ -233,12 +229,6 @@ function startGame() {
     }
 
     function loseGame() {
-        slowDown = setInterval(function() {
-            if (theme.playbackRate > 0.1)
-                theme.playbackRate -= 0.1
-            else 
-                clearInterval(slowDown)
-        }, 250)
         loseMessage.style.display = 'inherit'
     }
 
@@ -349,13 +339,14 @@ function type(input) {
             clearInterval(typeInterval)
 
             var options = document.createElement('div')
+            options.id = 'options'
             options.innerHTML = `
                 <button onclick="goAway()">NO</button>
                 <button onclick="startGame()">YES</button>
             `
             document.getElementById("spaulding-intro-text").appendChild(options)
         }
-    }, 75);
+    }, 60);
 }
 
 function spauldingIntro() {

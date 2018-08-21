@@ -38,6 +38,7 @@ img#sr-logo {
 
 #game-container {
     display: none;
+    margin: auto;
 }
 
 .background {
@@ -109,6 +110,7 @@ canvas {
     z-index: 3;
     display: block;
     margin: auto;
+    position: relative;
 }
 
 #brighten {
@@ -125,4 +127,19 @@ button {
     border-radius: 0;
     padding: 0.75em 1.25em;
     cursor: pointer;
+}
+
+#options {
+    margin-top: 2em;
+    font-size: 1em;
+    text-align: center;
+}
+
+#spaulding-intro img {
+    display: block;
+    margin: auto;
+}
+
+#spaulding-intro {
+    text-align: justify;
 }
