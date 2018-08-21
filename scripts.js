@@ -3,8 +3,8 @@ var docReady = callback => {
     document.readyState === "complete" ? callback() : document.addEventListener("DOMContentLoaded", callback)
 }
 function startGame() {
-    document.getElementById('hide-intro').style.display = "none"
-    document.getElementById('game-container').style.display = 'inherit'
+    // document.getElementById('hide-intro').style.display = "none"
+    // document.getElementById('game-container').style.display = 'inherit'
 
     document.body.removeEventListener("click", startGame)
 
@@ -249,6 +249,88 @@ function startGame() {
         classname[i].addEventListener('click', playAgain, false)
     }
 }
+
+const showCard1 = () => {
+    return new Promise((resolve) => {
+        var div = document.createElement("div")
+        var html = `<h1>COMING SEPTEMBER 8TH, 2018</h1>`
+        div.innerHTML = html
+        div.classList.add('card')
+        document.body.appendChild(div)
+        setTimeout(() => {
+            div.classList.add('fadeIn')
+        }, 500)
+        setTimeout(() => {
+            div.classList.remove('fadeIn')
+        }, 2500)
+        setTimeout(() => {
+            resolve()
+            document.body.removeChild(div)
+        }, 4500)
+    })
+}
+
+const showCard2 = () => {
+    return new Promise((resolve) => {
+        var img = document.createElement("img")
+        img.src = 'assets/sr-presents.png'
+        img.classList.add('card')
+        document.body.appendChild(img)
+        setTimeout(() => {
+            img.classList.add('fadeIn')
+        }, 500)
+        setTimeout(() => {
+            img.classList.remove('fadeIn')
+        }, 2500)
+        setTimeout(() => {
+            resolve()
+            document.body.removeChild(img)
+        }, 4500)
+    })
+}
+
+const flash = () => {
+    return new Promise((resolve) => {
+        var x = 0;
+        var intervalID = setInterval(() => {
+            document.body.style.background = x % 2 == 0 ? 'black' : 'white';
+
+            if (++x === 16) {
+                window.clearInterval(intervalID)
+                document.body.style.backgroundImage = "url('assets/waterfall.gif')"
+                document.body.style.backgroundSize = 'cover'
+                resolve()
+            }
+        }, 100)
+    })
+}
+
+function startSplashMusic() {
+    var music = new Audio()
+    music.src = 'assets/splash.mp3'
+    music.loop = true
+    music.id = "splash"
+    music.playbackRate = 1.25
+    music.play()
+}
+
+function showSplash() {
+    document.getElementById('intro').style.display = 'inherit'
+    document.getElementById('darken').style.display = 'inherit'
+    document.body.classList.add('background')
+    startSplashMusic()
+}
+
 docReady(() => {
-    document.body.addEventListener("click", startGame)
+    showCard1()
+    .then(() => {
+        showCard2()
+        .then(() => {
+            flash()
+            .then(() => {
+                showSplash()
+            }) 
+        })
+    })
+    //document.body.addEventListener("click", startGame)
 })

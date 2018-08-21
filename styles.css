@@ -1,47 +1,49 @@
 * {
     font-family: 'Roboto Mono', monospace;
-    color: white;
+}
+
+#intro {
+    padding: 3em 0;
+    width: 98%;
+    max-width: 600px;
+    display: block;
+    margin: auto;
+    z-index: 10;
+    position: relative;
+    display: none;
+}
+
+#intro-content {
+    margin: 2em 0;
+    text-align: center;
+}
+
+.card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all 2s;
+}
+
+.fadeIn {
+    opacity: 1;
+}
+
+img#sr-logo {
+    width: 100%;
+    /* box-shadow: -4px 4px 4px black; */
 }
 
 #game-container {
     display: none;
 }
 
-#logo-container {
-    z-index: 20;
-    position: absolute;
-    top: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-#logo-container img {
-    display: block;
-    margin: auto;
-}
-
-#logo-container h1 {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 3em;
-    text-shadow: 4px 4px 4px black;
-    font-style: italic;
-}
-
-
-#click-anywhere {
-    position: fixed;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-style: italic;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    letter-spacing: 4px;
-}
-
-body {
+.background {
     padding: 0;
     margin: 0;
-    background-image: url('assets/lose.png');
+    background-image: url('assets/waterfall.gif');
     background-size: cover;
 }
 
@@ -50,7 +52,9 @@ body {
     height: 100%;
     position: fixed;
     top: 0; left: 0;
-    background: rgba(0, 0, 0, 0.9);
+    z-index: 0;
+    background: rgba(255, 255, 255, 0.9);
+    display: none;
 }
 
 img#logo {
@@ -108,8 +112,9 @@ canvas {
 
 button {
     background: rgba(0, 0, 0, 0);
-    border: solid 1px white;
+    font-size: 1em;
+    border: solid 1px black;
     border-radius: 0;
-    padding: 6px 8px;
+    padding: 0.75em 1.25em;
     cursor: pointer;
 }
