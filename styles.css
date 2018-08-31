@@ -13,6 +13,47 @@
     display: none;
 }
 
+#background-gif {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('assets/si-background-gif.gif');
+    background-size: cover;
+    z-index: 0;
+}
+
+.info-lighten {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.6);
+    z-index: 1;
+}
+
+#island-info {
+    padding: 1em 0;
+    position: relative;
+    z-index: 2;
+    font-size: 2em;
+    width: 98%;
+    max-width: 600px;
+    display: block;
+    margin: auto;
+    text-align: justify;
+}
+
+#island-info a {
+    color: inherit;
+}
+
+#island-info img {
+    width: 100%;
+}
+
 #intro-content {
     margin: 2em 0;
     text-align: center;
