@@ -256,7 +256,7 @@ function startGame() {
 }
 
 function goAway() {
-    window.location.href = 'https://www.google.com/search?q=poop&oq=poop'
+    window.location.href = 'info.html'
 }
 
 const showCard1 = () => {
@@ -364,6 +364,10 @@ function spauldingIntro() {
         'Whats up world? It\'s me, world-famous DJ and international playboy, Spaulding! I\'m headed out to Spoiler Island 3 with the rest of the players, but I can\'t show up empty handed! Can you help me collect 50 tingers?'
 
     type(text)
+}
+
+function goToInfo() {
+    window.location.href="info.html"
 }
 
 docReady(() => {
