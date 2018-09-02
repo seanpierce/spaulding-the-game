@@ -18,13 +18,6 @@
     position: absolute;
     top: 60%;
     width: 100%;
-    display: none;
-}
-
-@media (max-width: 680px) {
-    #mobile-buttons {
-        display: inherit;
-    }
 }
 
 #mobile-buttons p {
