@@ -17,8 +17,13 @@ var sfxFlash = new Audio()
 sfxFlash.src = 'assets/SFX-flash-in.mp3'
 
 function startGame() {
+    document.getElementById('start').style.display = "none"
     document.getElementById('intro').style.display = "none"
+    document.getElementById('darken').style.display = 'inherit'
     document.getElementById('game-container').style.display = "block"
+    document.body.style.backgroundImage = "url('assets/waterfall.gif')"
+    document.body.style.backgroundSize = 'cover'
+
     splash.pause()
 
     document.body.removeEventListener("click", startGame)
@@ -199,6 +204,10 @@ function startGame() {
     })
 
     function update() {
+        if (!theme.paused||!theme.currentTime) {
+            theme.play()
+        }
+
         if (cursors.left.isDown) {
             player.setVelocityX(-1 * runSpeed)
             ///player.anims.play('left', true);
@@ -439,5 +448,8 @@ function goToInfo() {
 }
 
 docReady(() => {
-    //document.body.addEventListener("click", startGame)
+    var param = window.location.search
+    if (param.indexOf('intro=false') > -1) {
+        startGame()
+    }
 })
