@@ -154,6 +154,50 @@ function startGame() {
         countDown()
     }
 
+    function moveRight() {
+        cursors.right.isDown = true
+    }
+
+    function moveLeft() {
+        cursors.left.isDown = true
+    }
+
+    function jump() {
+        cursors.up.isDown = true
+        player.body.touching.down = true
+    }
+
+    function stopMovement() {
+        cursors.right.isDown = false
+        cursors.left.isDown = false
+        cursors.up.isDown = false
+        player.body.touching.down = false
+    }
+
+    document.getElementById('move-right').addEventListener('mousedown', function() {
+        moveRight()
+    })
+
+    document.getElementById('move-left').addEventListener('mousedown', function() {
+        moveLeft()
+    })
+
+    document.getElementById('jump').addEventListener('mousedown', function() {
+        jump()
+    })
+
+    document.getElementById('move-right').addEventListener('mouseup', function() {
+        stopMovement()
+    })
+
+    document.getElementById('move-left').addEventListener('mouseup', function() {
+        stopMovement()
+    })
+
+    document.getElementById('jump').addEventListener('mouseup', function() {
+        stopMovement()
+    })
+
     function update() {
         if (cursors.left.isDown) {
             player.setVelocityX(-1 * runSpeed)

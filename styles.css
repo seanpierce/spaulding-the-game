@@ -14,6 +14,30 @@
     cursor: pointer;
 }
 
+#mobile-buttons {
+    position: absolute;
+    top: 60%;
+    width: 100%;
+    display: none;
+}
+
+@media (max-width: 680px) {
+    #mobile-buttons {
+        display: inherit;
+    }
+}
+
+#mobile-buttons p {
+    width: 100%;
+    text-align: center;
+}
+
+.mobile-icon {
+    width: 150px;
+    margin: 2em;
+    position: relative;
+    z-index: 10;
+}
 #intro {
     padding: 3em 0;
     width: 98%;
