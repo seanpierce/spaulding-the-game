@@ -1,5 +1,6 @@
-<html>
+<html onmouseover="startSound()">
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title> Spaulding: The Game</title>
         <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
         <link rel="stylesheet" href="styles.css">
@@ -21,4 +22,14 @@
                 <a href="https://www.google.com/maps/place/0899+SW+Curry+St,+Portland,+OR+97239/data=!4m2!3m1!1s0x54950a663c1259f9:0x3f245e52263596a2?sa=X&ved=2ahUKEwia59Tto5bdAhUOx58KHYHzAN0Q8gEwAHoECAQQAQ"><img src="assets/map.png" id="map"alt=""></a>
             </div>
     </body>
+    <script>
+        var infoSound = new Audio()
+        infoSound.src = "assets/E-GZR-UntitledA2.mp3"
+        infoSound.loop = true
+
+        function startSound() {
+            infoSound.play()
+        }
+
+    </script>
 </html>

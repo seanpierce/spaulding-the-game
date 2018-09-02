@@ -2,6 +2,18 @@
     font-family: 'Roboto Mono', monospace;
 }
 
+#start {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#start h1 {
+    font-size: 20vmin;
+    cursor: pointer;
+}
+
 #intro {
     padding: 3em 0;
     width: 98%;

@@ -9,6 +9,13 @@ splash.src = 'assets/splash.mp3'
 splash.loop = true
 splash.playbackRate = 1.25
 
+var sfxIntro = new Audio()
+sfxIntro.src = 'assets/SFX-intro-01.mp3'
+sfxIntro.loop = true
+
+var sfxFlash = new Audio()
+sfxFlash.src = 'assets/SFX-flash-in.mp3'
+
 function startGame() {
     document.getElementById('intro').style.display = "none"
     document.getElementById('game-container').style.display = "block"
@@ -259,6 +266,21 @@ function goAway() {
     window.location.href = 'info.html'
 }
 
+function startIntro() {
+    sfxIntro.play()
+    document.getElementById('start').style.display = 'none'
+    showCard1()
+    .then(() => {
+        showCard2()
+        .then(() => {
+            flash()
+            .then(() => {
+                showSplash()
+            }) 
+        })
+    })
+}
+
 const showCard1 = () => {
     return new Promise((resolve) => {
         var div = document.createElement("div")
@@ -299,6 +321,8 @@ const showCard2 = () => {
 }
 
 const flash = () => {
+    sfxIntro.pause()
+    sfxFlash.play()
     return new Promise((resolve) => {
         var x = 0;
         var intervalID = setInterval(() => {
@@ -371,15 +395,5 @@ function goToInfo() {
 }
 
 docReady(() => {
-    showCard1()
-    .then(() => {
-        showCard2()
-        .then(() => {
-            flash()
-            .then(() => {
-                showSplash()
-            }) 
-        })
-    })
     //document.body.addEventListener("click", startGame)
 })
